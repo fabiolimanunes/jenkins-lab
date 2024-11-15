@@ -5,6 +5,8 @@ repositories:
     url: https://charts.jenkins.io
   - name: gitea
     url: https://dl.gitea.com/charts/
+  - name: harbor
+    url: https://helm.goharbor.io
 
 releases:
 
@@ -28,7 +30,15 @@ releases:
     namespace: gitea
     createNamespace: true
     chart: gitea/gitea
-    version: 10.6.0 ## ultimaversao deu erro no redis
+    version: 10.6.0 ## ultimaversao deu erro no redis, desabilitei
     #version: 10.1.1
     values:
       - values/gitea/values.yaml
+
+  - name: harbor
+    namespace: harbor
+    createNamespace: true
+    chart: harbor/harbor
+    version: 1.14.0
+    values:
+      - values/harbor/values.yaml
