@@ -7,6 +7,8 @@ repositories:
     url: https://dl.gitea.com/charts/
   - name: harbor
     url: https://helm.goharbor.io
+  - name: sonarqube
+    url: https://SonarSource.github.io/helm-chart-sonarqube
 
 releases:
 
@@ -45,3 +47,12 @@ releases:
     version: 1.17.0
     values:
       - values/harbor/values.yaml
+  
+  - name: sonarqube
+    namespace: sonarqube
+    createNamespace: true
+    chart: sonarqube/sonarqube
+    version: 2025.2.0
+    installed: true
+    values:
+      - values/sonarqube/values.yaml
