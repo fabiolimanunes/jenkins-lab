@@ -20,5 +20,9 @@ destroy:
 	@kind delete clusters kind
 
 passwd:
-	@echo "JENKINS"
+	@echo "JENKINS:"
 	@kubectl get secret -n jenkins jenkins -ojson | jq -r '.data. "jenkins-admin-password"' | base64 -d
+	@echo "\nSONARQUBE:"
+	@echo "igI864beZZfs@"
+	@echo "ARGOCD:"
+	@kubectl get secret -n argocd argocd-initial-admin-secret -ojson | jq -r '.data.password' | base64 -d
