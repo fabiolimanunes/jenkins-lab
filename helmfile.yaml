@@ -22,7 +22,8 @@ releases:
     namespace: jenkins
     createNamespace: true
     chart: jenkins/jenkins
-    version: 5.7.12
+    version: 5.8.36
+    installed: true
     values:
       - values/jenkins/values.yaml
   
@@ -30,7 +31,8 @@ releases:
     namespace: gitea
     createNamespace: true
     chart: gitea/gitea
-    version: 10.6.0 ## ultimaversao deu erro no redis, desabilitei
+    version: 11.0.0
+    #version: 10.6.0 ## ultimaversao deu erro no redis, desabilitei
     #version: 10.1.1
     values:
       - values/gitea/values.yaml
@@ -39,6 +41,7 @@ releases:
     namespace: harbor
     createNamespace: true
     chart: harbor/harbor
-    version: 1.14.0
+    installed: true
+    version: 1.17.0
     values:
       - values/harbor/values.yaml

@@ -19,13 +19,14 @@ spec:
           - /bin/sh
           - -c
           - |
-            grep -q jenkins /tmp/etc/hosts || echo '172.19.0.100 argocd.localhost.com jenkins.localhost.com gitea.localhost.com sonarqube.localhost.com harbor.localhost.com' >> /tmp/etc/hosts
+            grep -q jenkins /tmp/etc/hosts || echo '172.18.0.100 argocd.localhost.com jenkins.localhost.com gitea.localhost.com sonarqube.localhost.com harbor.localhost.com' >> /tmp/etc/hosts
         volumeMounts:
         - name: etc
           mountPath: /tmp/etc
       containers:
       - name: pause
-        image: gcr.io/google-containers/pause:2.0
+        image: gcr.io/google-containers/pause:latest
+        #image: gcr.io/google-containers/pause:2.0
       volumes:
       - name: etc
         hostPath:
