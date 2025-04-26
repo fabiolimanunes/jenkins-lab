@@ -26,3 +26,6 @@ passwd:
 	@echo "igI864beZZfs@"
 	@echo "ARGOCD:"
 	@kubectl get secret -n argocd argocd-initial-admin-secret -ojson | jq -r '.data.password' | base64 -d
+	@echo "\nGITEA:"
+	@echo "gitea_admin | jenkins"
+	@echo "r8sA8CPHD9!bt6d | LrXXTxp3!aX!x!cA95bxzyu3LG " 

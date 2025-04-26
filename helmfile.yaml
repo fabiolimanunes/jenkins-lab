@@ -18,6 +18,7 @@ releases:
   - name: ingress-nginx
     namespace: ingress-nginx
     createNamespace: true
+    installed: true
     chart: ingress-nginx/ingress-nginx
     version: 4.11.3
     values:
@@ -37,6 +38,7 @@ releases:
     createNamespace: true
     chart: gitea/gitea
     version: 11.0.0
+    installed: true
     #version: 10.6.0 ## ultimaversao deu erro no redis, desabilitei
     #version: 10.1.1
     values:
